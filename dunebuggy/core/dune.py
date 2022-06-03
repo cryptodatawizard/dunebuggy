@@ -21,7 +21,7 @@ from dunebuggy.core.exceptions import DuneError
 
 class Dune:
     def __init__(self, username=None, password=None):
-        self.client = Client()
+        self.client = Client(timeout=None)
         self.gqlquerier = GraphQLQuerier(self.client)
         self.client.headers.update(DEFAULT_HEADERS)
         self.access_token = None
